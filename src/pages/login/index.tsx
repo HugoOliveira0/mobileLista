@@ -15,6 +15,7 @@ import { style } from "./styles";
 import Logo from '../../assets/logo_etec.png';
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import { themas } from "../../global/themes";
+import { Input } from "../../components/input";
 
 
 export default function Login() {
@@ -26,12 +27,16 @@ export default function Login() {
         try {
             setLoading(true);
             if (!email || !password) {
-                return Alert.alert('Atenção', 'Digite os campos obrigatórios');
+                setTimeout(() => {
+                    Alert.alert('Atenção', 'Digite os campos obrigatórios');
+                    setLoading(false);
+                }, 3000);
+                return;
             }
 
             setTimeout(() => {
-                if (email == 'mauricioaneves@terra.com.br' && password == '1234') {
-                    Alert.alert('Sucesso', 'Logado com Suceso');
+                if (email === 'mauricioaneves@terra.com.br' && password === '1234') {
+                    Alert.alert('Sucesso', 'Logado com Sucesso');
                 } else {
                     Alert.alert('Erro', 'Usuário não encontrado');
                 }
@@ -40,6 +45,7 @@ export default function Login() {
 
         } catch (error) {
             Alert.alert('Erro', 'Erro ao Logar');
+            setLoading(false);
         }
 
     }
@@ -55,10 +61,18 @@ export default function Login() {
                 />
                 <Text style={style.text}>Bem vindo de volta</Text>
             </View>
+
+
             <View style={style.boxMid}>
 
-                <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
+                <Input 
+                    title="ENDEREÇO DE EMAIL"
+                />
+
+                {/* <Text style={style.titleInput}>ENDEREÇO DE E-MAIL</Text>
                 <View style={style.boxInput}>
+
+
                     <TextInput
                         style={style.input}
                         value={email}
@@ -70,7 +84,9 @@ export default function Login() {
                         size={20}
                         color={themas.colors.gray}
                     />
-                </View>
+                </View> */}
+
+
                 <Text style={style.titleInput}>SENHA</Text>
                 <View style={style.boxInput}>
                     <TextInput
