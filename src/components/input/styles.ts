@@ -22,5 +22,9 @@ export const style = StyleSheet.create({
         marginLeft: 5,
         color: themas.colors.gray,
         marginTop: 20,
-    }
+    },
+    icon: {
+        width: '100%'
+    },
+
 }); 
