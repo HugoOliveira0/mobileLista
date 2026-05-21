@@ -12,10 +12,10 @@ import {
 
 import { style } from "./styles";
 import Logo from '../../assets/logo_etec.png';
-import { MaterialIcons, Entypo, Octicons } from "@expo/vector-icons";
+import { MaterialIcons, Octicons } from "@expo/vector-icons";
 import { themas } from "../../global/themes";
 import { Input } from "../../components/input";
-import Button from "../../components/button";
+import { Button } from "../../components/button";
 
 
 export default function Login() {
@@ -80,11 +80,11 @@ export default function Login() {
                     title="SENHA"
                     value={password}
                     onChangeText={setPassword}
-                    secureTextEntry={showPassword}
+                    secureTextEntry={!showPassword}
                     onIconRightPress={() => setShowPassword(!showPassword)}
 
                     IconRight={Octicons}
-                    iconRightName={showPassword ? "eye-closed" : "eye"}
+                    iconRightName={showPassword ? "eye" : "eye-closed"}
                 />
 
             </View>
