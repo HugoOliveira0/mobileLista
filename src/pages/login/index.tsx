@@ -36,8 +36,9 @@ export default function Login() {
             }
 
             setTimeout(() => {
-                if (email === 'mauricioaneves@terra.com.br' && password === '1234') {
+                if (email === 'a' && password === 'a') {
                     Alert.alert('Sucesso', 'Logado com Sucesso');
+                    // Precisa adicionar isso aqui. navigation.reset({routes:[name: "Tabs"]}) está dando erro
                 } else {
                     Alert.alert('Erro', 'Usuário não encontrado');
                 }
